@@ -1,12 +1,13 @@
 interface IconProps {
-  icon: string;
+  name: string;
+  size?: number;
   className?: string;
 }
 
-export const Icon = ({ icon, className }: IconProps) => {
+export const Icon = ({ name, size = 24, className }: IconProps) => {
   return (
-    <svg className={`h-6 w-6 ${className}`}>
-      <use href={`/src/assets/${icon}.svg#${icon}`} />
+    <svg height={size} width={size} className={className}>
+      <use href={`/src/assets/${name}.svg#${name}`} />
     </svg>
   );
 };
